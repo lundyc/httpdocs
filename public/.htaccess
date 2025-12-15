@@ -1,0 +1,28 @@
+RewriteEngine On
+
+# ------------------------------------------------------------
+
+# ALLOW DIRECT ACCESS TO UPLOADS (images, PDFs, etc)
+
+# ------------------------------------------------------------
+
+RewriteCond %{REQUEST_URI} ^/uploads/
+RewriteRule ^ - [L]
+
+# ------------------------------------------------------------
+
+# IF the request is an existing file or folder, serve it
+
+# ------------------------------------------------------------
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ------------------------------------------------------------
+
+# OTHERWISE, ROUTE EVERYTHING TO index.php
+
+# ------------------------------------------------------------
+
+RewriteRule ^ index.php [QSA,L]

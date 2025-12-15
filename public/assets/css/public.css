@@ -1,0 +1,101 @@
+/* Custom helpers to complement Tailwind */
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #000814;
+  background-image:
+    radial-gradient(circle at 12% 22%, rgba(255, 195, 0, 0.16) 0, transparent 52%),
+    radial-gradient(circle at 78% 12%, rgba(0, 53, 102, 0.14) 0, transparent 48%),
+    linear-gradient(140deg, rgba(0, 29, 61, 0.28), rgba(0, 8, 20, 0.72));
+}
+
+::selection {
+  background-color: rgba(255, 195, 0, 0.86);
+  color: #000814;
+}
+
+.bg-hero-maroon {
+  background-image: linear-gradient(135deg, rgba(0, 8, 20, 0.96), rgba(0, 53, 102, 0.9));
+}
+
+.bg-maroon-noise {
+  position: relative;
+  background-image: linear-gradient(145deg, rgba(0, 8, 20, 0.94), rgba(0, 29, 61, 0.92));
+  overflow: hidden;
+}
+
+.bg-maroon-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='%23f6f8ff' fill-opacity='0.22'%3E%3Cpolygon points='0 0 40 0 0 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.shadow-maroon-xl {
+  box-shadow: 0 35px 70px -30px rgba(0, 13, 61, 0.55);
+}
+
+.shadow-gold {
+  box-shadow: 0 18px 38px -16px rgba(255, 195, 0, 0.45);
+}
+
+.prose a {
+  color: #ffc300;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  color: #ffd60a;
+}
+
+.prose blockquote {
+  border-left: 4px solid #ffc300;
+  padding-left: 1rem;
+  color: #001d3d;
+  background-color: rgba(0, 53, 102, 0.08);
+}
+
+.prose hr {
+  border-color: rgba(0, 29, 61, 0.12);
+}
+
+.prose table {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(0, 53, 102, 0.08);
+}
+
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fade-up 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
