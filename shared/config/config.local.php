@@ -3,7 +3,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'mch_os');
 define('DB_USER', 'myclubhub');
-define('DB_PASS', 'e0039288466');
+define('DB_PASS', 'AGmn_wD0te43ez_k');
 
 // Optional: site URLs for convenience
 define('BASE_URL', 'https://www.myclubhub.co.uk');
